@@ -10,6 +10,7 @@ check_policies = func() {
   }
   return pass
 }
+policies_validated = check_policies()
 main = rule {
-  check_policies()
+  policies_validated
 }
