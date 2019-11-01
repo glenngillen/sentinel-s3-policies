@@ -1,8 +1,19 @@
 import "tfplan"
+import "tfstate"
 check_policies = func() {
   pass = true
   for tfplan.resources.aws_s3_bucket as _, buckets {
     for buckets as _, bucket {
+      print('plan')
+      print(bucket)
+      if bucket.applied.acl is "public-read" {
+        pass = false
+      }
+    }
+  }
+  for tfstate.resources.aws_s3_bucket as _, buckets {
+    for buckets as _, bucket {
+      print('state')
       print(bucket)
       if bucket.applied.acl is "public-read" {
         pass = false
