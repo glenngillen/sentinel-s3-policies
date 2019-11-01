@@ -11,8 +11,8 @@ check_policies = func() {
       }
     }
   }
-  print(tfstate)
   for tfstate.resources.aws_s3_bucket as _, buckets {
+    print(buckets)
     for buckets as _, bucket {
       print("state")
       print(bucket)
