@@ -11,5 +11,5 @@ check_policies = func() {
   return pass
 }
 main = rule {
-  check_policies
+  check_policies()
 }
