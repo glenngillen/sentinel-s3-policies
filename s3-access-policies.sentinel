@@ -1,3 +1,4 @@
+import "tfplan"
 check_policies = func() {
   pass = true
   for tfplan.resources.aws_s3_bucket as _, buckets {
